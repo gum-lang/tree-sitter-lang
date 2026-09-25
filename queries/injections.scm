@@ -1,1 +1,1 @@
-# Comments for tree-sitter injections (if needed)
+; No injections needed for Gum markup language
