@@ -1,0 +1,29 @@
+{
+  "grammars": [
+    {
+      "name": "gum",
+      "camelcase": "Gum",
+      "scope": "source.gum",
+      "path": ".",
+      "file-types": ["gum"],
+      "injection-regex": "gum",
+      "highlights": "./queries/highlights.scm"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Tree-sitter grammar for the Gum markup language",
+    "authors": [],
+    "links": {},
+    "repository": "https://github.com/gum-lang/gum-lang"
+  },
+  "bindings": {
+    "c": true,
+    "go": false,
+    "node": true,
+    "python": false,
+    "rust": false,
+    "zig": false
+  }
+}

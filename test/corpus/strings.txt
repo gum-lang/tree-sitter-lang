@@ -1,0 +1,130 @@
+========================================
+Basic string
+========================================
+
+greeting = "Hello, World!"
+escaped = "Hello\nWorld\t!"
+unicode = "\u0041"
+
+---
+
+(document
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (basic_string)))
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (basic_string
+        (escape_sequence)
+        (escape_sequence))))
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (basic_string
+        (escape_sequence
+          (unicode_sequence))))))
+
+========================================
+Literal string
+========================================
+
+path = 'C:\Users\test'
+simple = 'hello'
+
+---
+
+(document
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (literal_string)))
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (literal_string))))
+
+========================================
+Multiline string
+========================================
+
+description = """
+This is a
+multiline string
+"""
+
+---
+
+(document
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (multiline_string))))
+
+========================================
+Multiline literal string
+========================================
+
+regex = '''
+\d+
+\.\d+
+'''
+
+---
+
+(document
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (multiline_literal_string))))
+
+========================================
+String with escape sequences
+========================================
+
+text = "tab\there\nnewline"
+quote = "He said \"hello\""
+backslash = "path\\to\\file"
+
+---
+
+(document
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (basic_string
+        (escape_sequence)
+        (escape_sequence))))
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (basic_string
+        (escape_sequence)
+        (escape_sequence))))
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (basic_string
+        (escape_sequence)
+        (escape_sequence)))))

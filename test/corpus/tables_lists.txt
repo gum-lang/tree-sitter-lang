@@ -1,0 +1,211 @@
+========================================
+Simple table
+========================================
+
+config = { name = "test", value = 42 }
+
+---
+
+(document
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (table
+        (table_body
+          (assignment
+            (key
+              (single_key
+                (bare_key)))
+            (value
+              (basic_string)))
+          (assignment
+            (key
+              (single_key
+                (bare_key)))
+            (value
+              (number
+                (integer)))))))))
+
+========================================
+Empty table
+========================================
+
+empty = { }
+
+---
+
+(document
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (table))))
+
+========================================
+Simple list
+========================================
+
+items = [1, 2, 3]
+
+---
+
+(document
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (list
+        (list_body
+          (value
+            (number
+              (integer)))
+          (value
+            (number
+              (integer)))
+          (value
+            (number
+              (integer))))))))
+
+========================================
+Empty list
+========================================
+
+empty = [ ]
+
+---
+
+(document
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (list))))
+
+========================================
+Nested tables
+========================================
+
+outer = { inner = { key = "value" } }
+
+---
+
+(document
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (table
+        (table_body
+          (assignment
+            (key
+              (single_key
+                (bare_key)))
+            (value
+              (table
+                (table_body
+                  (assignment
+                    (key
+                      (single_key
+                        (bare_key)))
+                    (value
+                      (basic_string))))))))))))
+
+========================================
+List of tables
+========================================
+
+servers = [{ host = "a" }, { host = "b" }]
+
+---
+
+(document
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (list
+        (list_body
+          (value
+            (table
+              (table_body
+                (assignment
+                  (key
+                    (single_key
+                      (bare_key)))
+                  (value
+                    (basic_string))))))
+          (value
+            (table
+              (table_body
+                (assignment
+                  (key
+                    (single_key
+                      (bare_key)))
+                  (value
+                    (basic_string)))))))))))
+
+========================================
+Mixed list
+========================================
+
+mixed = [1, "two", true, null]
+
+---
+
+(document
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (list
+        (list_body
+          (value
+            (number
+              (integer)))
+          (value
+            (basic_string))
+          (value
+            (boolean))
+          (value
+            (null)))))))
+
+========================================
+Table with nested list
+========================================
+
+data = { items = [1, 2, 3] }
+
+---
+
+(document
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (table
+        (table_body
+          (assignment
+            (key
+              (single_key
+                (bare_key)))
+            (value
+              (list
+                (list_body
+                  (value
+                    (number
+                      (integer)))
+                  (value
+                    (number
+                      (integer)))
+                  (value
+                    (number
+                      (integer))))))))))))

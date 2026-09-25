@@ -1,0 +1,124 @@
+========================================
+Simple assignments
+========================================
+
+name = "Gum"
+version = 1
+enabled = true
+data = null
+
+---
+
+(document
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (basic_string)))
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (number
+        (integer))))
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (boolean)))
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (null))))
+
+========================================
+Dotted key assignments
+========================================
+
+server.host = "localhost"
+server.port = 8080
+database.connection.timeout = 30
+
+---
+
+(document
+  (assignment
+    (key
+      (dotted_key
+        (single_key
+          (bare_key))
+        (single_key
+          (bare_key))))
+    (value
+      (basic_string)))
+  (assignment
+    (key
+      (dotted_key
+        (single_key
+          (bare_key))
+        (single_key
+          (bare_key))))
+    (value
+      (number
+        (integer))))
+  (assignment
+    (key
+      (dotted_key
+        (single_key
+          (bare_key))
+        (single_key
+          (bare_key))
+        (single_key
+          (bare_key))))
+    (value
+      (number
+        (integer)))))
+
+========================================
+Assignments with comments
+========================================
+
+# This is a comment
+name = "test"
+# Another comment
+value = 42
+
+---
+
+(document
+  (comment)
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (basic_string)))
+  (comment)
+  (assignment
+    (key
+      (single_key
+        (bare_key)))
+    (value
+      (number
+        (integer)))))
+
+========================================
+Quoted keys
+========================================
+
+"special key" = "value"
+
+---
+
+(document
+  (assignment
+    (key
+      (single_key
+        (basic_string)))
+    (value
+      (basic_string))))
